@@ -1,0 +1,42 @@
+[
+    {
+      "id": "1",
+      "destination": "Bali",
+      "title": "Bali Adventure Package",
+      "description": "Explore the beautiful island of Bali with our adventure package...",
+      "price": 1200,
+      "duration": "7 days, 6 nights",
+      "rating": 4.8,
+      "imageUrl": "https://example.com/bali.jpg",
+      "highlights": ["Beach visit", "Temple tour", "Snorkeling"],
+      "availableFrom": "2024-08-01",
+      "availableTo": "2024-12-31"
+    },
+    {
+        "id": "2",
+        "destination": "Bali",
+        "title": "Bali Marathon Package",
+        "description": "Explore the beautiful island of Bali with our Marathon package...",
+        "price": 2200,
+        "duration": "14 days, 13 nights",
+        "rating": 4.3,
+        "imageUrl": "https://example.com/bali.jpg",
+        "highlights": ["Beach visit", "Temple tour", "Snorkeling"],
+        "availableFrom": "2024-08-01",
+        "availableTo": "2024-12-31"
+      },
+    {
+      "id": "2",
+      "destination": "Paris",
+      "title": "Romantic Paris Getaway",
+      "description": "Experience the romance of Paris with our exclusive package...",
+      "price": 1500,
+      "duration": "5 days, 4 nights",
+      "rating": 4.9,
+      "imageUrl": "https://example.com/paris.jpg",
+      "highlights": ["Eiffel Tower visit", "Seine river cruise", "Louvre Museum"],
+      "availableFrom": "2024-09-01",
+      "availableTo": "2025-01-15"
+    }
+  ]
+  
