@@ -1,5 +1,13 @@
 import { useEffect, useState } from 'react'
-import { ComboBox } from './combobox'
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+  } from "@/components/ui/select";
 
 interface Props {}
 interface Option {
@@ -43,8 +51,24 @@ function Filters(props: Props) {
 
     return (
         <>
-            <div className="bg-slate-700 w-full h-16">
-              {options.length > 0 && <ComboBox options={options} />}
+            <div className="flex gap-5 w-full h-16 pl-12 items-center justify-start">
+              {options.length > 0 && 
+                <Select>
+                    <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Select a fruit" />
+                    </SelectTrigger>
+                    <SelectContent>
+                    <SelectGroup>
+                        <SelectLabel>Fruits</SelectLabel>
+                        <SelectItem value="apple">Apple</SelectItem>
+                        <SelectItem value="banana">Banana</SelectItem>
+                        <SelectItem value="blueberry">Blueberry</SelectItem>
+                        <SelectItem value="grapes">Grapes</SelectItem>
+                        <SelectItem value="pineapple">Pineapple</SelectItem>
+                    </SelectGroup>
+                    </SelectContent>
+                </Select>
+              }
             </div>
         </>
     )
