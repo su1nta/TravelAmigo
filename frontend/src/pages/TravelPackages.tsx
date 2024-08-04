@@ -18,7 +18,7 @@ function TravelPackages(props: Props) {
     useEffect(() => {
         axios.get('/api/packages')
         .then((response) => {
-            console.log(response);
+            console.log(response.data);
             setTrPackages(response.data.data);
             setTrPackagesLength(response.data.totalPackages); 
         }).catch((error) => {
