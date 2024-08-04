@@ -11,7 +11,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'https://travelamigo-backend.onrender.com',
+      '/api': {
+        target: 'https://travelamigo-backend.onrender.com',
+        changeOrigin: true,
+        secure: true,
+      },
     },
   },
 })

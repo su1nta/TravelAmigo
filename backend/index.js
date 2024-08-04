@@ -1,8 +1,20 @@
+const cors = require('cors');
 const express = require('express');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
+const allowedOrigins = ['https://travelamigo-mgif.onrender.com', 'http://localhost:5173']
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}));
 
 // Sample packages
 const travelPackages = require('./data/packages.json');

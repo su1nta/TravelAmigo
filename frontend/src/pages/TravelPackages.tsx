@@ -14,17 +14,16 @@ interface Props {}
 function TravelPackages(props: Props) {
     const {} = props
     const [trPackages, setTrPackages] = useState([]);
+    const [trPackagesLength, setTrPackagesLength] = useState(0);
     useEffect(() => {
-        const fetchTravelPackages = async () =>{
-            try{
-                const response = await axios.get('/api/packages');
-                console.log(response);
-                setTrPackages(response.data.data);
-                
-            }catch(error){
-                console.log(error);}
-        }
-        fetchTravelPackages();
+        axios.get('/api/packages')
+        .then((response) => {
+            console.log(response);
+            setTrPackages(response.data.data);
+            setTrPackagesLength(response.data.totalPackages); 
+        }).catch((error) => {
+            console.log(error);
+        });
     }, []);
 
 
@@ -33,7 +32,7 @@ function TravelPackages(props: Props) {
             <main className="flex h-full w-full">
                 <Sidebar active="packages"/>
                 <div className="flex flex-col gap-3 w-full ml-16">
-                <Header noPackages={trPackages ? trPackages.length : 0}/>
+                <Header noPackages={trPackagesLength > 0 ? trPackages.length : 0}/>
                 <Filters/>
 
                 <Search />
@@ -42,9 +41,10 @@ function TravelPackages(props: Props) {
                     <Separator />
                 </div>
                 <div className="flex flex-col gap-4 w-4/6 px-12">
-                    {trPackages.map((trPackage: any) => (
+                    {trPackagesLength > 0 ? trPackages.map((trPackage: any) => (
                         <PackageCard key={trPackage.id} trPackage={trPackage} />
-                    ))}
+                        
+                    )) : <p>No packages found</p>}
                 </div>
                 <div className="flex m-6"><PaginationImp/></div>
                 </div>
