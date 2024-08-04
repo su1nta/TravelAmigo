@@ -7,7 +7,7 @@ import Sort from '@/components/sort';
 import { Separator } from '@/components/ui/separator';
 import Filters from '@/components/filters';
 import { useState,useEffect } from 'react';
-import axios from 'axios';
+import apiClient from '@/ApiClient';
 
 interface Props {}
 
@@ -16,7 +16,8 @@ function TravelPackages(props: Props) {
     const [trPackages, setTrPackages] = useState([]);
     const [trPackagesLength, setTrPackagesLength] = useState(0);
     useEffect(() => {
-        axios.get(`/api/packages`)
+
+        apiClient.get(`/api/packages`)
         .then((response) => {
             console.log(response.data);
             setTrPackages(response.data.data);

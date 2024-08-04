@@ -9,15 +9,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  server: {
-    proxy: {
-        '/api': {
-            target: 'https://travelamigo-backend.onrender.com',
-            secure: false,
-            changeOrigin: true
-          }
-    }
-  },
   build: {
     sourcemap: false,
   },

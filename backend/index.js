@@ -1,11 +1,14 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Sample packages
 const travelPackages = require('./data/packages.json');
+
+app.use(cors());
 
 app.get('/api/packages', (req, res) => {
     let packages = travelPackages;
