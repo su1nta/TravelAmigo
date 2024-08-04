@@ -8,9 +8,12 @@ const allowedOrigins = ['https://travelamigo-mgif.onrender.com', 'http://localho
 
 app.use(cors({
     origin: function (origin, callback) {
+        console.log('Origin:', origin); // Log the origin for debugging
         if (allowedOrigins.includes(origin) || !origin) {
+            console.log('CORS allowed');
             callback(null, true);
         } else {
+            console.log('CORS denied');
             callback(new Error('Not allowed by CORS'));
         }
     }
