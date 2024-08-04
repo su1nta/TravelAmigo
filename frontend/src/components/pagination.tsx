@@ -7,7 +7,12 @@ import {
     PaginationNext,
     PaginationPrevious,
   } from "@/components/ui/pagination"
+import { Dispatch, SetStateAction } from "react"
   
+  interface Props {
+    trPackages:Dispatch<SetStateAction<never[]>>,
+    trPackagesLength: number
+  }
   export function PaginationImp() {
     return (
       <Pagination>

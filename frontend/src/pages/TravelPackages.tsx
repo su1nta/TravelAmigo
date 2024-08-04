@@ -1,6 +1,6 @@
 import Header from '@/components/header';
 import PackageCard from '@/components/package-card';
-import { PaginationImp } from '@/components/pagination';
+import {PaginationImp} from '@/components/pagination';
 import Search from '@/components/search';
 import Sidebar from '@/components/sidebar';
 import Sort from '@/components/sort';
@@ -17,7 +17,8 @@ function TravelPackages(props: Props) {
     const [trPackagesLength, setTrPackagesLength] = useState(0);
     useEffect(() => {
 
-        apiClient.get(`/api/packages`)
+        apiClient.get(`/api/packages`,
+             { params: { page: 1, limit: 5 } })
         .then((response) => {
             console.log(response.data);
             setTrPackages(response.data.data);
@@ -34,7 +35,7 @@ function TravelPackages(props: Props) {
                 <Sidebar active="packages"/>
                 <div className="flex flex-col gap-3 w-full ml-16">
                 <Header noPackages={trPackagesLength > 0 ? trPackages.length : 0}/>
-                <Filters/>
+                <Filters filterType='destination' trPackages={setTrPackages}/>
 
                 <Search />
                 <Sort />

@@ -52,6 +52,18 @@ app.get('/api/packages', (req, res) => {
     });
 });
 
+app.get('/api/destinations', (req, res) => {
+    const destinations = travelPackages.map(pkg => pkg.destination);
+    const uniqueDestinations = [...new Set(destinations)];
+    res.json(uniqueDestinations);
+})
+
+
+
+app.get('api/lost', (req, res) => {
+    res.send('You lost your way, traveller!');
+})
+
 // Parse duration (e.g., "7 days, 6 nights" -> 7)
 const parseDuration = (duration) => {
     const days = parseInt(duration.split(' ')[0]);
