@@ -11,7 +11,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-        'api': 'https://travelamigo-backend.onrender.com'
+        '/api': 'https://travelamigo-backend.onrender.com'
     }
   },
   build: {
