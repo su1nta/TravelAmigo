@@ -1,6 +1,5 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { Star, Heart, MapPin, Wifi, Bed } from "lucide-react";
-import { useState } from "react";
+import { Star, Heart, MapPin } from "lucide-react";
 
 interface Props {
   trPackage: any

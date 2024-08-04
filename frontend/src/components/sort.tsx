@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import { Button } from './ui/button'
+import { useState } from 'react';
+import { Button } from './ui/button';
 
-interface Props {}
-
-function Sort(props: Props) {
+const Sort = () => {
   const [activeButton, setActiveButton] = useState<string | null>(null)
 
   const handleButtonClick = (buttonName: string) => {
