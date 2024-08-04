@@ -16,7 +16,7 @@ function TravelPackages(props: Props) {
     const [trPackages, setTrPackages] = useState([]);
     const [trPackagesLength, setTrPackagesLength] = useState(0);
     useEffect(() => {
-        axios.get('/api/packages')
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/packages`)
         .then((response) => {
             console.log(response.data);
             setTrPackages(response.data.data);
