@@ -33,7 +33,7 @@ function TravelPackages(props: Props) {
             <main className="flex h-full w-full">
                 <Sidebar active="packages"/>
                 <div className="flex flex-col gap-3 w-full ml-16">
-                <Header noPackages={trPackages.length}/>
+                <Header noPackages={trPackages ? trPackages.length : 0}/>
                 <Filters/>
 
                 <Search />
