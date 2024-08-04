@@ -36,16 +36,19 @@ app.get('/api/packages', (req, res) => {
         packages = packages.filter(pkg => parseDuration(pkg.duration) <= parseDuration(maxDuration));
     }
 
+    // Calculate total number of packages after filtering
+    const totalPackages = packages.length;
+
     // Pagination
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
+    const limit = parseInt(req.query.limit) || 5;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 
     const resultPackages = packages.slice(startIndex, endIndex);
 
     res.json({
-        totalPackages: packages.length,
+        totalPackages,  // Return the total number of filtered packages
         page,
         limit,
         data: resultPackages
@@ -57,8 +60,6 @@ app.get('/api/destinations', (req, res) => {
     const uniqueDestinations = [...new Set(destinations)];
     res.json(uniqueDestinations);
 })
-
-
 
 app.get('api/lost', (req, res) => {
     res.send('You lost your way, traveller!');

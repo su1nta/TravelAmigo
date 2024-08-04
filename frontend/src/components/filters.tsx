@@ -64,7 +64,9 @@ const Filters = ({ filterType, trPackages }: Props) => {
     const clearSelection = () => {
         setSelectedOption("");
         trPackages([]); // Clear the travel packages when selection is cleared
-        apiClient.get("/api/packages")
+        apiClient.get("/api/packages",
+            { params: { page: 1, limit: 5 } }
+        )
             .then((response) => {
                 trPackages(response.data.data);
             })
@@ -75,30 +77,34 @@ const Filters = ({ filterType, trPackages }: Props) => {
     };
 
     return (
-        <div className="flex gap-5 w-full h-16 pl-12 items-center justify-start">
-            {options.length > 0 &&
+        <div className="flex flex-col sm:flex-row gap-4 w-full h-auto sm:h-16 px-4 sm:px-12 items-center sm:items-start justify-start">
+            {options.length > 0 && (
                 <>
-                    <Select value={selectedOption} onValueChange={handleFilter}>
-                        <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder={`Select a ${filterType}`} />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectGroup>
-                                <SelectLabel>Destinations</SelectLabel>
-                                {options.map(option => (
-                                    <SelectItem key={option.value} value={option.value}>
-                                        {option.label}
-                                    </SelectItem>
-                                ))}
-                            </SelectGroup>
-                        </SelectContent>
-                    </Select>
-                    <Button variant="outline" onClick={clearSelection} className="ml-4">
+                <Select value={selectedOption} onValueChange={handleFilter}>
+                    <SelectTrigger className="w-full sm:w-[180px]">
+                    <SelectValue placeholder={`Select a ${filterType}`} />
+                    </SelectTrigger>
+                    <SelectContent>
+                    <SelectGroup>
+                        <SelectLabel>Destinations</SelectLabel>
+                        {options.map(option => (
+                        <SelectItem key={option.value} value={option.value}>
+                            {option.label}
+                        </SelectItem>
+                        ))}
+                    </SelectGroup>
+                    </SelectContent>
+                </Select>
+                <div>
+                    <Button variant="outline" onClick={clearSelection} className="w-full sm:w-auto sm:ml-4 mt-2 sm:mt-0">
                         Clear Selection
                     </Button>
+                </div>
                 </>
-            }
+            )}
         </div>
+
+
     );
 };
 

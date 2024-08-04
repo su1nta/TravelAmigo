@@ -13,8 +13,8 @@ function Header({ noPackages }: Props) {
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
                         {noPackages} Packages to Travel
                     </h1>
-                    <h3 className="mt-2 text-lg md:text-2xl font-medium text-slate-400">
-                        Add Description/ Sub-heading
+                    <h3 className="-mt-2 text-lg md:text-2xl -z-10 font-medium text-slate-400">
+                        Escape from reality with us
                     </h3>
                 </div>
                 <div className="mt-6 md:mt-0 flex flex-col md:flex-row gap-4">

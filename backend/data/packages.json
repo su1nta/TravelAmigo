@@ -14,19 +14,20 @@
       "availableTo": "2024-12-31"
     },
     {
-        "id": "2",
-        "destination": "Bali",
-        "title": "Bali Marathon Package",
-        "description": "Explore the beautiful island of Bali with our Marathon package...",
-        "price": 2200,
-        "duration": "14 days, 13 nights",
-        "rating": 4.3,
-        "reviews": 100,
-        "imageUrl": "https://plus.unsplash.com/premium_photo-1668883189152-d771c402c385?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "highlights": ["Beach visit", "Temple tour", "Snorkeling"],
-        "availableFrom": "2024-08-01",
-        "availableTo": "2024-12-31"
-      },
+      "id": "2",
+      "destination": "Darjeeling",
+      "title": "Darjeeling Serenity",
+      "description": "Escape to the tranquil hills of Darjeeling with our serene package, featuring breathtaking views and lush tea gardens...",
+      "price": 1500,
+      "duration": "5 days, 4 nights",
+      "rating": 4.7,
+      "reviews": 78,
+      "imageUrl": "https://images.unsplash.com/photo-1606343388973-5e4fa71b3d2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-1.2.1&q=80&w=1080",
+      "highlights": ["Tiger Hill Sunrise", "Batasia Loop", "Darjeeling Himalayan Railway"],
+      "availableFrom": "2024-09-01",
+      "availableTo": "2025-03-31",
+      "packageType": "Nature"
+    },
     {
       "id": "3",
       "destination": "Paris",
@@ -43,17 +44,32 @@
     },
     {
       "id": "4",
-      "destination": "Paris",
-      "title": "Romantic Paris Getaway",
-      "description": "Experience the romance of Paris with our exclusive package...",
-      "price": 1500,
-      "duration": "5 days, 4 nights",
-      "rating": 4.9,
-      "reviews": 69,
-      "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "highlights": ["Eiffel Tower visit", "Seine river cruise", "Louvre Museum"],
-      "availableFrom": "2024-09-01",
-      "availableTo": "2025-01-15"
+      "destination": "Bali",
+      "title": "Bali Marathon Package",
+      "description": "Explore the beautiful island of Bali with our Marathon package...",
+      "price": 2200,
+      "duration": "14 days, 13 nights",
+      "rating": 4.3,
+      "reviews": 100,
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1668883189152-d771c402c385?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "highlights": ["Beach visit", "Temple tour", "Snorkeling"],
+      "availableFrom": "2024-08-01",
+      "availableTo": "2024-12-31"
+    },
+    {
+      "id": "5",
+      "destination": "Jaipur",
+      "title": "Jaipur Royal Experience",
+      "description": "Immerse yourself in the rich heritage and grandeur of Jaipur with our royal experience package...",
+      "price": 1800,
+      "duration": "6 days, 5 nights",
+      "rating": 4.8,
+      "reviews": 88,
+      "imageUrl": "https://images.unsplash.com/photo-1582742718594-0849d536be7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-1.2.1&q=80&w=1080",
+      "highlights": ["Amber Fort", "City Palace", "Hawa Mahal"],
+      "availableFrom": "2024-10-01",
+      "availableTo": "2025-04-30",
+      "packageType": "Historical"
     },
     {
       "id": "6",
@@ -71,7 +87,7 @@
       "packageType": "Cultural"
     },
     {
-      "id": "6",
+      "id": "7",
       "destination": "Tokyo",
       "title": "Tokyo Adventure",
       "description": "Discover the vibrant culture and technology of Tokyo with our exciting package...",
@@ -85,7 +101,21 @@
       "availableTo": "2025-03-31"
     },
     {
-      "id": "7",
+      "id": "8",
+      "destination": "Paris",
+      "title": "Romantic Paris Getaway",
+      "description": "Experience the romance of Paris with our exclusive package...",
+      "price": 1500,
+      "duration": "5 days, 4 nights",
+      "rating": 4.9,
+      "reviews": 69,
+      "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "highlights": ["Eiffel Tower visit", "Seine river cruise", "Louvre Museum"],
+      "availableFrom": "2024-09-01",
+      "availableTo": "2025-01-15"
+    },
+    {
+      "id": "9",
       "destination": "New York",
       "title": "New York City Experience",
       "description": "Immerse yourself in the bustling life of New York City with our comprehensive tour package...",
@@ -99,7 +129,7 @@
       "availableTo": "2025-02-28"
     },
     {
-      "id": "8",
+      "id": "10",
       "destination": "Rome",
       "title": "Classic Rome Tour",
       "description": "Explore the ancient history and stunning architecture of Rome with our guided tour package...",
@@ -113,7 +143,22 @@
       "availableTo": "2025-05-31"
     },
     {
-      "id": "9",
+      "id": "11",
+      "destination": "Goa",
+      "title": "Goa Beach Bliss",
+      "description": "Relax and unwind on the sandy shores of Goa with our beach bliss package, offering sun, sea, and sand...",
+      "price": 1600,
+      "duration": "5 days, 4 nights",
+      "rating": 4.9,
+      "reviews": 94,
+      "imageUrl": "https://images.unsplash.com/photo-1513829866072-3d4b12e057b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-1.2.1&q=80&w=1080",
+      "highlights": ["Baga Beach", "Fort Aguada", "Calangute Beach"],
+      "availableFrom": "2024-11-01",
+      "availableTo": "2025-06-30",
+      "packageType": "Beach"
+    },
+    {
+      "id": "12",
       "destination": "Sydney",
       "title": "Sydney Highlights Tour",
       "description": "Experience the best of Sydney, from its iconic landmarks to its stunning beaches...",
@@ -127,7 +172,7 @@
       "availableTo": "2025-04-30"
     },
     {
-      "id": "10",
+      "id": "13",
       "destination": "Cape Town",
       "title": "Cape Town Escape",
       "description": "Discover the natural beauty and cultural richness of Cape Town with our exclusive escape package...",

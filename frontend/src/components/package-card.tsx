@@ -8,7 +8,7 @@ interface Props {
 
 const PackageCard = ({ trPackage }: Props) => {
   return (
-    <Card className="flex flex-col md:flex-row w-full border p-4 rounded-lg">
+    <Card className="flex flex-col md:flex-row w-full border p-4 rounded-lg cursor-pointer">
       <CardHeader className="flex-shrink-0 w-full md:w-1/3 flex items-center justify-center">
         <img
           src={trPackage.imageUrl}

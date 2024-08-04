@@ -9,7 +9,7 @@ const Sort = () => {
   }
 
   return (
-    <div className="flex gap-1 w-full px-12 mt-3">
+    <div className="flex justify-center sm:justify-start gap-1 w-full px-12 mt-3">
       <Button
         variant={activeButton === 'date' ? 'default' : 'outline'}
         onClick={() => handleButtonClick('date')}
