@@ -13,7 +13,7 @@ import { Button } from './ui/button';
 
 interface Props {
     filterType: string;
-    trPackages: Dispatch<SetStateAction<never[]>>;
+    setTrPackages: Dispatch<SetStateAction<any[]>>;
 }
 
 interface Option {
@@ -21,7 +21,7 @@ interface Option {
     label: string;
 }
 
-const Filters = ({ filterType, trPackages }: Props) => {
+const Filters = ({ filterType, setTrPackages }: Props) => {
     const [options, setOptions] = useState<Option[]>([]);
     const [selectedOption, setSelectedOption] = useState<string | "">("");
 
@@ -54,7 +54,7 @@ const Filters = ({ filterType, trPackages }: Props) => {
         let url = "/api/packages";
         apiClient.get(url, { params: { destination: value } })
             .then((response) => {
-                trPackages(response.data.data);
+                setTrPackages(response.data.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -63,12 +63,12 @@ const Filters = ({ filterType, trPackages }: Props) => {
 
     const clearSelection = () => {
         setSelectedOption("");
-        trPackages([]); // Clear the travel packages when selection is cleared
+        setTrPackages([]); // Clear the travel packages when selection is cleared
         apiClient.get("/api/packages",
             { params: { page: 1, limit: 5 } }
         )
             .then((response) => {
-                trPackages(response.data.data);
+                setTrPackages(response.data.data);
             })
             .catch((error) => {
                 console.log(error);

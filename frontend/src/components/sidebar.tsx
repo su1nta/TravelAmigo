@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react';
-import { Button } from './/ui/button';
+import { Button } from './ui/button';
 import { ModeToggle } from "./modeToggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PiHouseLine, PiAirplaneTiltDuotone, PiPackage, PiChartLineUp } from "react-icons/pi";
 import { TbSettings } from "react-icons/tb";
 import { Link } from 'react-router-dom';
+import { cn } from "@/lib/utils"; // Make sure you have this utility function
 
 interface Props {
-    active: string
+    active: string;
+    isOpen: boolean; // Add this prop
 }
 
-function Sidebar(props: Props) {
-    const { active } = props
+function Sidebar({ active, isOpen }: Props) {
     const [avatarImage, setAvatarImage] = useState("");
     const [isActive, setIsActive] = useState("");
 
@@ -23,11 +24,14 @@ function Sidebar(props: Props) {
         });
 
         setIsActive(active);
-    })
+    }, [active]);
 
     return (
         <>
-            <aside className="flex fixed flex-col justify-between items-center p-3 w-16 h-screen z-10">
+        <aside className={cn(
+            "flex fixed flex-col justify-between items-center p-3 w-16 h-screen z-20 bg-background transition-transform duration-300 ease-in-out",
+            isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        )}>
                 
                 <div className="flex flex-col gap-3 mt-6 items-center">
                     <PiAirplaneTiltDuotone className="text-4xl mb-3"/>
@@ -35,7 +39,7 @@ function Sidebar(props: Props) {
                         <Link to={'/'}><PiHouseLine className="text-2xl"/></Link>
                     </Button>
                     <Button variant={isActive == "packages" ? 'secondary' : 'ghost'} size="icon">
-                        <Link to={'/TravelPackages'}><PiPackage className="text-2xl" /></Link>
+                        <Link to={'/travelpackages'}><PiPackage className="text-2xl" /></Link>
                     </Button>
                     <Button variant={isActive == "analytics" ? 'secondary' : 'ghost'} size="icon">
                         <Link to={'/analytics'}><PiChartLineUp className="text-2xl" /></Link>
