@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -68,12 +69,18 @@ app.get('api/lost', (req, res) => {
 })
 
 // const parentDir = path.join(__dirname, '/..');
-const frontendPath = path.join(__dirname, 'frontend', 'dist');
-app.use(express.static(frontendPath));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'index.html'));
-});
+// const frontendPath = path.join(__dirname, 'frontend', 'dist');
+fs.readdir(path.join(__dirname, '..', 'frontend', 'dist'), (err, files) => {
+    if (err) {
+      console.error('Error reading dist directory:', err);
+    } else {
+      console.log('Files in dist:', files);
+      app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
+      app.get('*', (req, res) => {
+            res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
+      });
+    }
+  });
 
 // Parse duration (e.g., "7 days, 6 nights" -> 7)
 const parseDuration = (duration) => {
