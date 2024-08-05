@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline rounded-md",
         leftr: "bg-primary text-primary-foreground shadow hover:bg-primary/90 rounded-l-md",
         rightr: "bg-primary text-primary-foreground shadow hover:bg-primary/90 rounded-r-md",
-        floating: "fixed bottom-4 right-4 shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
+        floating: "fixed bottom-16 right-4 shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
       },
       size: {
         default: "h-9 px-4 py-2",
