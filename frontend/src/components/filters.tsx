@@ -79,11 +79,9 @@ const Filters = ({ setTrPackages }: Props) => {
             .catch((error) => {
                 console.log(error);
             });
-        console.log('Selection Cleared');
     };
 
     const handlePriceFilter = () => {
-        console.log(priceValues);
         let url = "/api/packages";
         apiClient.get(url, { params: { minPrice: priceValues[0], maxPrice: priceValues[1] } })
             .then((response) => {

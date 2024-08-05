@@ -17,27 +17,21 @@ const Sort = ({trPackages, setTrPackages}: Props) => {
   const handleButtonClick = (buttonName: string) => {
     setActiveButton(buttonName === activeButton ? null : buttonName);
   
-    console.log("Before sorting:", localTrPackages);
-  
     switch (buttonName) {
       case "date":
-        console.log("sorting by date");
         const sortedByDate = [...localTrPackages].sort((a, b) => {
           const dateA = new Date(a.availableTo).getTime();
           const dateB = new Date(b.availableTo).getTime();
           return dateA - dateB;
         });
-        console.log("Sorted by date:", sortedByDate);
         setLocalTrPackages(sortedByDate);
         setTrPackages(sortedByDate);
         break;
   
       case "price":
-        console.log("sorting by price");
         const sortedByPrice = [...localTrPackages].sort((a, b) => {
           return a.price - b.price;
         });
-        console.log("Sorted by price:", sortedByPrice);
         setLocalTrPackages(sortedByPrice);
         setTrPackages(sortedByPrice);
         break;
@@ -45,9 +39,6 @@ const Sort = ({trPackages, setTrPackages}: Props) => {
       default:
         break;
     }
-  
-    console.log("After sorting:", localTrPackages);
-    console.log("Updated trPackages:", trPackages);
   };
   
   

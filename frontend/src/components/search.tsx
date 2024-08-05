@@ -26,13 +26,11 @@ function Search({setTrPackages, setCurrPage, setPackageLimit, setTrPackagesLengt
             .catch((error) => {
                 console.log(error);
             });
-        console.log('Search Cleared');
     }
     const handleSearch = () => {
         apiClient.get(`/api/packages/search`,
                     { params: { term: searchVal } })
             .then((response) => {
-                console.log(response.data);
                 setTrPackages(response.data.data);
                 setCurrPage(response.data.page);
                 setPackageLimit(response.data.limit);

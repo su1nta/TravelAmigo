@@ -20,7 +20,6 @@ const TravelPackages = () => {
     apiClient
       .get(`/api/packages`, { params: { page: currPage, limit: packageLimit } })
       .then((response) => {
-        console.log("API Response:", response.data);
         setTrPackages([...response.data.data]); // Ensure immutability
         setCurrPage(response.data.page);
         setPackageLimit(response.data.limit);
