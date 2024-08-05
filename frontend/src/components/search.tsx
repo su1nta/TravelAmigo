@@ -13,7 +13,21 @@ interface Props {
 function Search({setTrPackages, setCurrPage, setPackageLimit, setTrPackagesLength}: Props) {
     const [searchVal, setSearchVal] = useState("");
 
-    const handleSearchClear = () => setSearchVal("")
+    const handleSearchClear = () => {
+        setSearchVal("")
+        setTrPackages([]); // Clear the travel packages when selection is cleared
+        apiClient.get("/api/packages",
+            { params: { page: 1, limit: 5 } }
+        )
+            .then((response) => {
+                setTrPackages(response.data.data);
+                setTrPackagesLength(response.data.totalPackages);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        console.log('Search Cleared');
+    }
     const handleSearch = () => {
         apiClient.get(`/api/packages/search`,
                     { params: { term: searchVal } })

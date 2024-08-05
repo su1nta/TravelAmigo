@@ -20,18 +20,16 @@ const TravelPackages = () => {
     apiClient
       .get(`/api/packages`, { params: { page: currPage, limit: packageLimit } })
       .then((response) => {
-        console.log(response.data);
-        setTrPackages(response.data.data);
+        console.log("API Response:", response.data);
+        setTrPackages([...response.data.data]); // Ensure immutability
         setCurrPage(response.data.page);
         setPackageLimit(response.data.limit);
         setTrPackagesLength(Number(response.data.totalPackages));
       })
       .catch((error) => {
-        console.log(error);
+        console.log("API Error:", error);
       });
   }, [currPage, packageLimit]);
-
-  console.log("Rendering TravelPackages with trPackages:", trPackages);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
