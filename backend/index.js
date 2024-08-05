@@ -129,7 +129,7 @@ fs.readdir(path.join(__dirname, '..', 'frontend', 'dist'), (err, files) => {
     }
   });
 
-app.get('*', (req, res) => {
+app.get('*/', (req, res) => {
     res.redirect('https://travelamigo-mgif.onrender.com');
 });
 
