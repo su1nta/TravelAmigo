@@ -9,14 +9,12 @@ import Filters from '@/components/filters';
 import { useState,useEffect } from 'react';
 import apiClient from '@/ApiClient';
 
-interface Props {}
 
-function TravelPackages(props: Props) {
-    const {} = props
+const TravelPackages = () => {
     const [trPackages, setTrPackages] = useState([]);
     const [trPackagesLength, setTrPackagesLength] = useState(0);
     const [currPage, setCurrPage] = useState(1);
-    const [packageLimit, setpackageLimit] = useState(5);
+    const [packageLimit, setPackageLimit] = useState(5);
 
     useEffect(() => {
         apiClient.get(`/api/packages`,
@@ -25,7 +23,7 @@ function TravelPackages(props: Props) {
             console.log(response.data);
             setTrPackages(response.data.data);
             setCurrPage(response.data.page);
-            setpackageLimit(response.data.limit);
+            setPackageLimit(response.data.limit);
             setTrPackagesLength(Number(response.data.totalPackages)); 
             
         }).catch((error) => {
@@ -43,7 +41,12 @@ function TravelPackages(props: Props) {
                 <div className="flex flex-col gap-3 w-full ml-16">
                 <Header noPackages={trPackagesLength > 0 ? trPackagesLength : 0}/>
                 <Filters filterType='destination' trPackages={setTrPackages}/>
-                <Search />
+                <Search 
+                    setTrPackages={setTrPackages}
+                    setCurrPage={setCurrPage}
+                    setPackageLimit={setPackageLimit}
+                    setTrPackagesLength={setTrPackagesLength}
+                />
                 <Sort />
                 <div className="p-12 w-full">
                     <Separator />

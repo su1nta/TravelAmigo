@@ -58,6 +58,39 @@ app.get('/api/packages', (req, res) => {
     });
 });
 
+app.get('/api/packages/search', (req, res) => {
+    const searchTerm = req.query.term;
+    let packages = travelPackages;
+
+    if (searchTerm) {
+        packages = packages.filter(pkg => 
+            pkg.destination.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            pkg.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            pkg.rating.toString().includes(searchTerm.toLowerCase()) ||
+            pkg.duration.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            pkg.price.toString().includes(searchTerm.toLowerCase())
+        );
+    }
+
+    // Calculate total number of packages after filtering
+    const totalPackages = packages.length;
+
+    // Pagination
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 5;
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+
+    const resultPackages = packages.slice(startIndex, endIndex);
+
+    res.json({
+        totalPackages,  // Return the total number of filtered packages
+        page,
+        limit,
+        data: resultPackages
+    });
+});
+
 app.get('/api/destinations', (req, res) => {
     const destinations = travelPackages.map(pkg => pkg.destination);
     const uniqueDestinations = [...new Set(destinations)];
