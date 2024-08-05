@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 interface Props {}
 
-function Construction(props: Props) {
+const Construction = (props: Props) => {
     const {} = props
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);  
     const toggleSidebar = () => {

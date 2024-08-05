@@ -53,7 +53,7 @@ const Sort = ({trPackages, setTrPackages}: Props) => {
   
 
     return (
-      <div className="flex justify-center sm:justify-start gap-1 w-full px-12 mt-3">
+      <div className="flex justify-center sm:justify-start gap-1 w-full px-12 mt-3 sm:mt-0">
         <Button
           variant={activeButton === 'date' ? 'default' : 'outline'}
           onClick={() => handleButtonClick('date')}

@@ -12,7 +12,7 @@ interface Props {
     isOpen: boolean; // Add this prop
 }
 
-function Sidebar({ active, isOpen }: Props) {
+const Sidebar = ({ active, isOpen }: Props) => {
     const [avatarImage, setAvatarImage] = useState("");
     const [isActive, setIsActive] = useState("");
 

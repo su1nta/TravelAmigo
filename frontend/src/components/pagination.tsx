@@ -15,7 +15,7 @@ interface Props {
     packageLimit: any
 }
 
-export function PaginationImp(paginationProps: Props) {
+const PaginationImp = (paginationProps: Props) => {
     const {trPackagesLength, currPage, setCurrPage, packageLimit } = paginationProps;
     
     const totalPages = Math.ceil(trPackagesLength / packageLimit);
@@ -82,3 +82,5 @@ export function PaginationImp(paginationProps: Props) {
         </Pagination>
     );
 }
+
+export default PaginationImp

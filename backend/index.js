@@ -91,6 +91,20 @@ app.get('/api/packages/search', (req, res) => {
     });
 });
 
+app.get('/api/packages/getprices', (req, res) => {
+
+    if (!travelPackages || travelPackages.length === 0) {
+        return { maxPrice: null, minPrice: null };
+      }
+
+    const prices = travelPackages.map(pkg => Number(pkg.price));
+    const uniquePrices = [...new Set(prices)];
+    const maxPrice = Math.max(...uniquePrices);
+    const minPrice = Math.min(...uniquePrices);
+    
+    res.json({ maxPrice, minPrice });
+});
+
 app.get('/api/destinations', (req, res) => {
     const destinations = travelPackages.map(pkg => pkg.destination);
     const uniqueDestinations = [...new Set(destinations)];

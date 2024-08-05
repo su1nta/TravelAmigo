@@ -43,7 +43,7 @@ function Search({setTrPackages, setCurrPage, setPackageLimit, setTrPackagesLengt
             });
     }
     return (
-        <div className="flex items-center justify-center space-x-3 px-12">
+        <div className="flex items-center justify-center space-x-3 px-12 mt-1">
         <div className="w-full flex flex-col sm:flex-row gap-4 items-center space-x-3">
             <div className="flex w-full md:w-3/5">
             <Input

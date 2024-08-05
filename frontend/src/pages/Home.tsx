@@ -1,6 +1,6 @@
 import Sidebar from "@/components/sidebar";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { HiMenuAlt3 } from "react-icons/hi";
 import { useState } from "react";
 
 const Home = () =>{
@@ -34,7 +34,7 @@ const Home = () =>{
               className="mr-2 md:hidden"
               onClick={toggleSidebar}
           >
-              <Menu className="h-6 w-6" />
+              <HiMenuAlt3 className="h-6 w-6" />
           </Button>
           <div>
             <h1 className="mt-20 md:mt-28 lg:mt-36 scroll-m-20 leading-tight text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">

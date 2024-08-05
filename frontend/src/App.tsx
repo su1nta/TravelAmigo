@@ -6,7 +6,7 @@ import TravelPackages from './pages/TravelPackages';
 import { ThemeProvider } from './components/themeProvider';
 
 
-function App() {
+const App = () => {
 
   return (
     <>

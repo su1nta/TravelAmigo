@@ -1,6 +1,6 @@
 import Header from '@/components/header';
 import PackageCard from '@/components/package-card';
-import { PaginationImp } from '@/components/pagination';
+import PaginationImp from '@/components/pagination';
 import Search from '@/components/search';
 import Sidebar from '@/components/sidebar';
 import Sort from '@/components/sort';
@@ -44,7 +44,7 @@ const TravelPackages = () => {
             noPackages={trPackagesLength > 0 ? trPackagesLength : 0} 
             toggleSidebar={toggleSidebar} 
           />
-          <Filters filterType="destination" setTrPackages={setTrPackages} />
+          <Filters setTrPackages={setTrPackages} />
           <Search
             setTrPackages={setTrPackages}
             setCurrPage={setCurrPage}

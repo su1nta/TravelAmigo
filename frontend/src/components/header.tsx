@@ -10,7 +10,7 @@ interface Props {
 function Header({ noPackages, toggleSidebar }: Props) {
     return (
         <header className="w-full px-4 py-6 md:px-12 md:py-8">
-            <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-col md:flex-row gap-2 items-center justify-between">
                 <div className="text-center md:text-left flex flex-col items-center md:items-start">
                     <div className="flex items-center mb-2 md:mb-0">
                         <Button
