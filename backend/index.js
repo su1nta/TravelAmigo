@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 4000;
 const travelPackages = require('./data/packages.json');
 
 app.use(cors());
+
 
 app.get('/api/packages', (req, res) => {
     let packages = travelPackages;
@@ -64,6 +66,14 @@ app.get('/api/destinations', (req, res) => {
 app.get('api/lost', (req, res) => {
     res.send('You lost your way, traveller!');
 })
+
+const parentDir = path.join(__dirname, '/..');
+const frontendPath = path.join(parentDir, 'frontend', 'dist');
+app.use(express.static(frontendPath));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendPath, 'index.html'));
+});
 
 // Parse duration (e.g., "7 days, 6 nights" -> 7)
 const parseDuration = (duration) => {
