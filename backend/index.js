@@ -72,7 +72,7 @@ app.get('api/lost', (req, res) => {
 // const frontendPath = path.join(__dirname, 'frontend', 'dist');
 fs.readdir(path.join(__dirname, '..', 'frontend', 'dist'), (err, files) => {
     if (err) {
-      console.error('Error reading dist directory:', err);
+      console.log('Error reading dist directory:', err);
     } else {
       console.log('Files in dist:', files);
       app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
@@ -81,6 +81,10 @@ fs.readdir(path.join(__dirname, '..', 'frontend', 'dist'), (err, files) => {
       });
     }
   });
+
+app.get('*', (req, res) => {
+    res.redirect('https://travelamigo-mgif.onrender.com');
+});
 
 // Parse duration (e.g., "7 days, 6 nights" -> 7)
 const parseDuration = (duration) => {
