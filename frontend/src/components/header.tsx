@@ -29,7 +29,7 @@ function Header({ noPackages, toggleSidebar }: Props) {
                         Escape from reality with us
                     </h3>
                 </div>
-                <div className="mt-6 md:mt-0 flex flex-col md:flex-row gap-4">
+                <div className="mt-6 mr-0 sm:mr-14 md:mt-0 flex flex-col md:flex-row gap-4">
                     <Button variant={'outline'} className="w-full md:w-auto">Share</Button>
                     <Button variant={'default'} size={'wide'} className="w-full md:w-auto">
                         <StarIcon className="mr-2"/>

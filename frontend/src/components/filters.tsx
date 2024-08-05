@@ -95,7 +95,7 @@ const Filters = ({ setTrPackages }: Props) => {
     return (
         <div className="flex flex-col sm:flex-row gap-4 w-full h-auto sm:h-16 px-4 sm:px-12 items-center bg-background-secondary/90 justify-start">
             {options.length > 0 && (
-                <>
+                <div className="flex flex-col sm:flex-row gap-0">
                     <Select value={selectedOption} onValueChange={handleDestFilter}>
                         <SelectTrigger className="w-full sm:w-[180px]">
                             <SelectValue placeholder={`Select a destination`} />
@@ -116,7 +116,7 @@ const Filters = ({ setTrPackages }: Props) => {
                             Clear Selection
                         </Button>
                     </div>
-                </>
+                </div>
             )}
 
             <div className="flex flex-col items-center justify-center w-auto md:w-64 pt-1 sm:pt-0">
