@@ -67,8 +67,8 @@ app.get('api/lost', (req, res) => {
     res.send('You lost your way, traveller!');
 })
 
-const parentDir = path.join(__dirname, '/..');
-const frontendPath = path.join(parentDir, 'frontend', 'build');
+// const parentDir = path.join(__dirname, '/..');
+const frontendPath = path.join('frontend', 'dist');
 app.use(express.static(frontendPath));
 
 app.get('*', (req, res) => {
